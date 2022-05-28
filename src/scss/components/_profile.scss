@@ -29,11 +29,15 @@
 
   .profile-description {
     .user-name {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
 
       span {
         font-weight: bold;
       }
+    }
+
+    .profile-status {
+      margin-bottom: 10px;
     }
   }
 
