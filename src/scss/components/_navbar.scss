@@ -1,0 +1,22 @@
+aside{
+  grid-area: navbar;
+  background: $navbar-bg;
+  nav{
+    padding: 10px;
+    text-transform: uppercase;
+    .active{
+      background: #278bf3;
+      color: #ffe200;
+    }
+    a{
+      padding: 10px 5px;
+      display: block;
+      color:#fff;
+
+      &:hover{
+        cursor: pointer;
+        background: #278bf3;
+      }
+    }
+  }
+}

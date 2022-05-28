@@ -1,0 +1,24 @@
+header{
+  grid-area: header;
+  color: $white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 70px;
+  grid-gap: 10px;
+  align-items: center;
+  padding: 0 20px;
+  .logo{
+
+  }
+  .auth-menu{
+    text-align: right ;
+    .auth-menu-link{
+      display: inline-block;
+      background: $send-btn;
+      padding: 10px 35px;
+      a{
+        color:#fff;
+      }
+    }
+  }
+}

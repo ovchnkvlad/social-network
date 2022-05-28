@@ -1,0 +1,93 @@
+.users-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    margin: 20px 0;
+  }
+.preloader {
+  text-align: center;
+  margin: 10% 0;
+}
+  .pagination {
+    text-align: center;
+   margin: 0 auto;
+    max-width: 30%;
+    overflow: scroll;
+    padding: 10px 0;
+    span {
+      margin: 0 10px;
+      padding: 5px 10px;
+
+      &:hover {
+        font-weight: bold;
+        background: $btn-color;
+        color: $white;
+        border-radius: 20px;
+        cursor: pointer;
+        opacity: .7;
+      }
+    }
+
+    .active {
+      font-weight: bold;
+      background: $btn-color;
+      border-radius: 20px;
+    }
+  }
+}
+
+.user-item {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  margin: 5px 100px;
+  background: #d8ebfe;
+  padding: 10px;
+
+  .user-location {
+    border: 1px solid #e1ad01;
+    text-align: center;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .follow-btn {
+      margin-top: 10px;
+      padding: 0px 5px;
+      border-color: transparent;
+      background: #FFC300;
+      color: #fff;
+      &:disabled,
+      button[disabled]{
+
+        background-color: #cccccc;
+        color: #666666;
+      }
+
+      &:hover {
+        background: #e1ad01;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .user-description {
+    .user-name {
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .user-status {
+      font-style: italic;
+    }
+
+
+  }
+}

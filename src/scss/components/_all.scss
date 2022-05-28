@@ -1,0 +1,42 @@
+@import './preloader';
+@import './dialogs';
+@import './footer';
+@import './navbar';
+@import './header';
+@import './profile';
+@import './not-found';
+@import './users';
+@import './login';
+
+
+.app-wrapper {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "navbar main"
+    "footer footer";
+  grid-template-rows: 1fr 80vh 1fr;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 5px;
+  height: 100vh;
+}
+
+main {
+  grid-area: main;
+  background: $main-bg;
+  overflow: scroll;
+}
+
+.btn {
+  background: $send-btn;
+  border: none;
+  padding: 10px 35px;
+  color: #fff;
+
+  &:hover {
+    background: $send-btn-hover;
+    cursor: pointer;
+  }
+
+}

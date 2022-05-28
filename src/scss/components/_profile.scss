@@ -1,0 +1,99 @@
+.profile-wrapper {
+  padding: 30px 50px;
+
+  .profile-cover {
+    width: 100%;
+    max-height: 150px;
+    background: #278bf3;
+
+    img {
+      width: 100%;
+      max-height: 150px;
+    }
+  }
+
+  .profile-details {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+
+    .profile-avatar {
+      img {
+        width: 150px;
+        margin-right: 50px;
+        border-radius: 50%;
+      }
+    }
+
+  }
+
+  .profile-description {
+    .user-name {
+      margin-bottom: 30px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .user-information {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-posts {
+    margin-bottom: 20px;
+
+    .add-new-post {
+      margin: 30px 0;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-top: 20px;
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        height: 60px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+
+    .user-posts-history {
+      display: flex;
+      flex-direction: column;
+
+      .post-item {
+        display: inline-flex;
+        justify-content: flex-start;
+        max-width: 50%;
+        margin-bottom: 15px;
+        padding: 10px;
+        background: #cbe0f6;
+        border-radius: 10px;
+      }
+
+      .post-thumbnail {
+        margin-right: 20px;
+      }
+
+      .post-details {
+        .post-date {
+          font-size: .7em;
+          margin-bottom: 15px;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
