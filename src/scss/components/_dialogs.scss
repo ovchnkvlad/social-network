@@ -36,6 +36,11 @@
     grid-area: content;
     padding: 20px;
     position: relative;
+    overflow: scroll;
+    .dialogs-field{
+      overflow: scroll;
+      max-height: 65vh;
+    }
 
     .message-item {
       display: inline-flex;
@@ -61,20 +66,29 @@
     }
 
     .message-form {
-      position: absolute;
-      bottom: 10px;
+      position: fixed;
+      bottom: 80px;
       width: 70%;
+
 
       form {
         display: flex;
+
+        .input-wrapper {
+          width: 65%;
+        }
 
         textarea {
           resize: none;
           border: none;
           margin-right: 10px;
           padding: 5px;
-          width: 100%;
+          width: 95%;
+          height: 45px;
         }
+      }
+      .btn{
+        max-height: 45px;
       }
     }
   }

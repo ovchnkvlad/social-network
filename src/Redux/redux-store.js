@@ -5,6 +5,7 @@ import usersReducers from "./users-reducer";
 import authReducer from "./auth-reducer";
 import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
+import appReducer from "./app-reducer";
 
 
 let reducers = combineReducers({
@@ -12,7 +13,8 @@ let reducers = combineReducers({
     dialogsPage: dialogsReducer,
     usersPage: usersReducers,
     auth: authReducer,
-    form: formReducer
+    form: formReducer,
+    app: appReducer
 })
 
 const store = createStore(reducers, applyMiddleware(thunk));

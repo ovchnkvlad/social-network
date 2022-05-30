@@ -4,9 +4,30 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  .form-error-description{
+    text-align: center;
+    text-transform: uppercase;
+    span{
+      color: indianred;
+      font-weight: bold;
+      font-size: 12px;
+    }
+  }
 
   form {
     margin: 20px 0;
+  }
+  .form-item{
+    .input-wrapper{
+      input{
+        display: block;
+        margin-bottom: 0;
+      }
+      .error-description{
+        position: relative;
+        bottom: 3px;
+      }
+    }
   }
 
   .form-item-btn {
@@ -27,8 +48,8 @@
   .form-item {
     input[type=text], input[type=password] {
       min-width: 250px;
-      margin-bottom: 10px;
       border: none;
+      margin-bottom: 5px;
       padding: 10px 5px;
     }
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import MessageItem from "./MessageItem/MessageItem";
 import DialogItem from "./DialogItem/DialogItem";
-import {Field, reduxForm} from "redux-form";
+import AddMessageFormRedux from "../AddMessageForm/AddMessageForm";
 
 const Dialogs = ({dialogs, messages, sendNewMessage}) => {
 
@@ -16,27 +16,15 @@ const Dialogs = ({dialogs, messages, sendNewMessage}) => {
 
         </div>
         <div className="dialogs-content">
-            {messages.map(message => <MessageItem id={message.id} key={message.id} text={message.text}
-                                                  date={message.createdAt}/>)}
-
+            <div className="dialogs-field">
+                {messages.map(message => <MessageItem id={message.id} key={message.id} text={message.text}
+                                                      date={message.createdAt}/>)}
+            </div>
             <div className="message-form">
                 <AddMessageFormRedux onSubmit={onAddMessageSubmit}/>
             </div>
         </div>
     </section>)
 };
-
-
-const AddMessageForm = (props) => {
-    return (<form onSubmit={props.handleSubmit}>
-        <Field component="textarea" name="newMessageBody" placeholder="Your message"/>
-        <button className='btn'>Send</button>
-    </form>)
-}
-
-const AddMessageFormRedux = reduxForm({
-    form: 'dialogAddMessageForm'
-})(AddMessageForm)
-
 
 export default Dialogs;

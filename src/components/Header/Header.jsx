@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import logoutIcon from '../../assets/images/logout.png'
 
 const Header = ({isAuth, login,logout}) => {
     return (<header>
@@ -11,7 +12,12 @@ const Header = ({isAuth, login,logout}) => {
         <div className="auth-menu">
                  <span className="auth-menu-link">
 
-                     {isAuth ? <div>{login} - <button onClick={logout}>Logout</button> </div>: <NavLink to="/login">Login</NavLink>}
+                     {isAuth ? <div>{login} - <img onClick={logout}
+                                                   src={logoutIcon}
+                                                   alt="Logout"
+                                                   className="logout-icon"
+                     /> </div>: <NavLink to="/login">Login</NavLink>}
+
 
                  </span>
         </div>
