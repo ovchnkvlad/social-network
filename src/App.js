@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import './scss/app.scss'
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -10,33 +10,44 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import UsersContainer from "./components/Users/UsersContrainer";
 import {Switch} from "react-router";
 import Login from "./components/Login/Login";
+import {connect} from "react-redux";
+import {compose} from "redux";
+import {initializeApp} from "./Redux/app-reducer";
+import Preloader from "./components/common/Preloader";
 
-// !TODO Login/Logout page
-// !TODO create validation for redux form
-// !TODO Paginator component
-// !TODO App initialization
-// !TODO selector(reselector)
-// !TODO
-// !TODO
-// !TODO
 
-function App() {
-    return (
-        <div className="app-wrapper">
-            <HeaderContainer/>
-            <Navbar/>
-            <main>
-                <Switch>
-                    <Route path="/profile/:userId?" children={<ProfileContainer/>}/>
-                    <Route path="/dialogs" children={<DialogsContainer/>}/>
-                    <Route path="/users" children={<UsersContainer/>}/>
-                    <Route path="/login" children={<Login/>}/>
-                    <Route path="*" children={<NotFound/>}/>
-                </Switch>
-            </main>
-            <Footer/>
-        </div>
-    );
+class App extends React.Component {
+    componentDidMount() {
+        this.props.initializeApp();
+    }
+
+    render() {
+        if (!this.props.initialized){
+            return <Preloader/>
+        }
+        return (
+            <div className="app-wrapper">
+                <HeaderContainer/>
+                <Navbar/>
+                <main>
+                    <Switch>
+                        <Route path="/profile/:userId?" children={<ProfileContainer/>}/>
+                        <Route path="/dialogs" children={<DialogsContainer/>}/>
+                        <Route path="/users" children={<UsersContainer/>}/>
+                        <Route path="/login" children={<Login/>}/>
+                        <Route path="*" children={<NotFound/>}/>
+                    </Switch>
+                </main>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    initialized: state.app.initialized
+})
+
+export default compose(
+    withRouter,
+    connect(mapStateToProps, {initializeApp}))(App);

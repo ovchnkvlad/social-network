@@ -38,5 +38,9 @@ main {
     background: $send-btn-hover;
     cursor: pointer;
   }
-
+}
+.error-description{
+  color: indianred;
+  font-size: 12px;
+  font-weight: bold;
 }

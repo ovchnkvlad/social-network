@@ -29,11 +29,15 @@
 
   .profile-description {
     .user-name {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
 
       span {
         font-weight: bold;
       }
+    }
+
+    .profile-status {
+      margin-bottom: 10px;
     }
   }
 
@@ -48,6 +52,9 @@
     .add-new-post {
       margin: 30px 0;
 
+      .input-wrapper{
+        width: 100%;
+      }
       form {
         display: flex;
         flex-direction: column;
@@ -59,13 +66,27 @@
         margin-top: 20px;
       }
 
+      .error {
+        border: 1.5px solid #f13434;
+      }
+
+      .textarea-wrapper {
+        width: 100%;
+
+      }
+
+      .error-description {
+        color: #f84040;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
       textarea {
         width: 100%;
         resize: none;
         height: 60px;
         padding: 10px;
         border: none;
-        border-radius: 10px;
       }
     }
 

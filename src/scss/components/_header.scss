@@ -16,6 +16,17 @@ header{
       display: inline-block;
       background: $send-btn;
       padding: 10px 35px;
+      div{
+        display: flex;
+        justify-content: center;
+        .logout-icon{
+          width: 20px;
+          &:hover{
+            cursor: pointer;
+            opacity: .5;
+          }
+        }
+      }
       a{
         color:#fff;
       }
